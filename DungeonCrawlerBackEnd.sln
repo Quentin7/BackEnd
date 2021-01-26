@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diiage.DungeonCrawlerBackEnd.WebApplication", "Diiage.DungeonCrawlerBackEnd.WebApplication\Diiage.DungeonCrawlerBackEnd.WebApplication.csproj", "{37BDD52C-25E4-49A7-ACC7-8C3CDB33C2D3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Diiage.DungeonCrawlerBackEnd.WebApplication", "Diiage.DungeonCrawlerBackEnd.WebApplication\Diiage.DungeonCrawlerBackEnd.WebApplication.csproj", "{37BDD52C-25E4-49A7-ACC7-8C3CDB33C2D3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diiage.DungeonCrawlerBackEnd.Entity", "Diiage.DungeonCrawlerBackEnd.Entity\Diiage.DungeonCrawlerBackEnd.Entity.csproj", "{B0FCB04B-A592-48F1-AA83-D35777E87F7B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diiage.DungeonCrawlerBackEnd.Repository", "Diiage.DungeonCrawlerBackEnd.Repository\Diiage.DungeonCrawlerBackEnd.Repository.csproj", "{D8F89D92-25F5-4B11-9A9E-FABEF80A152D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diiage.DungeonCrawlerBackEnd.Business", "Diiage.DungeonCrawlerBackEnd.Business\Diiage.DungeonCrawlerBackEnd.Business.csproj", "{69B65D0E-E8B6-4EA3-8B66-875A49356754}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{37BDD52C-25E4-49A7-ACC7-8C3CDB33C2D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{37BDD52C-25E4-49A7-ACC7-8C3CDB33C2D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{37BDD52C-25E4-49A7-ACC7-8C3CDB33C2D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0FCB04B-A592-48F1-AA83-D35777E87F7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0FCB04B-A592-48F1-AA83-D35777E87F7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0FCB04B-A592-48F1-AA83-D35777E87F7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0FCB04B-A592-48F1-AA83-D35777E87F7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8F89D92-25F5-4B11-9A9E-FABEF80A152D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8F89D92-25F5-4B11-9A9E-FABEF80A152D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8F89D92-25F5-4B11-9A9E-FABEF80A152D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8F89D92-25F5-4B11-9A9E-FABEF80A152D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69B65D0E-E8B6-4EA3-8B66-875A49356754}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69B65D0E-E8B6-4EA3-8B66-875A49356754}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69B65D0E-E8B6-4EA3-8B66-875A49356754}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69B65D0E-E8B6-4EA3-8B66-875A49356754}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
