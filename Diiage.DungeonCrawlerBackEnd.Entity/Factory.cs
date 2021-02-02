@@ -16,8 +16,8 @@ namespace Diiage.DungeonCrawlerBackEnd.Entity
         {
             Users = new List<User>();
 
-            User user1 = new User( "Henry", "salut@salut.mail", "", "");
-            User user2 = new User( "Sally", "salut@salut.mail", "", "");
+            User user1 = new User( "Henry", "James", "salut@salut.mail", "", "");
+            User user2 = new User( "Sally", "Oldfield", "salut@salut.mail", "", "");
 
             Class Warrior = new Class 
             {
@@ -285,8 +285,8 @@ namespace Diiage.DungeonCrawlerBackEnd.Entity
         {
             Users = new List<User>()
             {
-                new User( "Henry", "salut@salut.mail", "", ""),
-                new User("Sally", "salut@salut.mail", "", ""),
+                new User( "Henry", "James", "salut@salut.mail", "", ""),
+                new User("Sally", "Oldfield", "salut@salut.mail", "", ""),
             };
             
             return Users;

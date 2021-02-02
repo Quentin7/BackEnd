@@ -5,7 +5,8 @@ namespace Diiage.DungeonCrawlerBackEnd.Entity
     public class User : IEntity
     {
         public int UserId { get; set; }
-        public string UserName { get; set; }
+        public string UserFirstname { get; set; }
+        public string UserLastname { get; set; }
         public string UserEMail { get; set; }
         public string UserPasswordHash { get; set; }
         public string UserPasswordSalt { get; set; }
@@ -16,9 +17,10 @@ namespace Diiage.DungeonCrawlerBackEnd.Entity
             this.UserCharacters = new List<Character>();
         }
 
-        public User( string name, string email, string passwordHash, string passwordSalt)
+        public User( string firstname, string lastname, string email, string passwordHash, string passwordSalt)
         {
-            this.UserName = name;
+            this.UserFirstname = firstname;
+            this.UserLastname = lastname;
             this.UserEMail = email;
             this.UserPasswordHash = passwordHash;
             this.UserPasswordSalt = passwordSalt;
