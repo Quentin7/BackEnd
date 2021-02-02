@@ -4,4 +4,10 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Diiage.DungeonCrawlerBackEnd.Entity.Context\Diiage.DungeonCrawlerBackEnd.Entity.Context.csproj" />
+    <ProjectReference Include="..\Diiage.DungeonCrawlerBackEnd.Repository.contract\Diiage.DungeonCrawlerBackEnd.Repository.Contract.csproj" />
+    <ProjectReference Include="..\Diiage.DungeonCrawlerBackEnd.Repository\Diiage.DungeonCrawlerBackEnd.Repository.csproj" />
+  </ItemGroup>
+
 </Project>
