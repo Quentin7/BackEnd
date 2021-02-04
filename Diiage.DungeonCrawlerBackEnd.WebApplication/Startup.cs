@@ -55,7 +55,7 @@ namespace Diiage.DungeonCrawlerBackEnd.WebApplication
             });
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapHub<HomeHub>("/home-hub");
+                endpoints.MapHub<AuthentificationHub>("/authentification-hub");
             });
 
             app.UseCors(builder =>
