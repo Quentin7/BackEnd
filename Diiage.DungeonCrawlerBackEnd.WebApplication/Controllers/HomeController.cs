@@ -1,5 +1,4 @@
-﻿using Diiage.DungeonCrawlerBackEnd.Repository.Contract;
-using Diiage.DungeonCrawlerBackEnd.WebApplication.Hubs;
+﻿using Diiage.DungeonCrawlerBackEnd.WebApplication.Hubs;
 using Diiage.DungeonCrawlerBackEnd.WebApplication.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;
@@ -17,7 +16,7 @@ namespace Diiage.DungeonCrawlerBackEnd.WebApplication.Controllers
     {
 
         private static string test = "";
-        private IPotionRepository _potion;
+        //private IPotionBusiness _potion;
 
         private readonly IHubContext<HomeHub> hubContext;
         public HomeController(IHubContext<HomeHub> homeHub)

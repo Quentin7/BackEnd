@@ -1,7 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.1</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Diiage.DungeonCrawlerBackEnd.Business.Contracts\Diiage.DungeonCrawlerBackEnd.Business.Contracts.csproj" />
+    <ProjectReference Include="..\Diiage.DungeonCrawlerBackEnd.Entity\Diiage.DungeonCrawlerBackEnd.Entity.csproj" />
+    <ProjectReference Include="..\Diiage.DungeonCrawlerBackEnd.Repository.Contracts\Diiage.DungeonCrawlerBackEnd.Repository.Contracts.csproj" />
+  </ItemGroup>
 
 </Project>
