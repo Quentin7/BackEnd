@@ -2,7 +2,7 @@
 
 namespace Diiage.DungeonCrawlerBackEnd.WebApplication.Hubs
 {
-    public class AuthentificationHub : Hub
+    public class AuthentificationHub : Hub    
     {
 
     }

@@ -1,4 +1,5 @@
 ﻿using Diiage.DungeonCrawlerBackEnd.Entity;
+using Diiage.DungeonCrawlerBackEnd.Entity.Context;
 using Microsoft.EntityFrameworkCore.Query;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Text;
 
 namespace Diiage.DungeonCrawlerBackEnd.Repository.Contract
 {
-    public interface IGenericRepository<TEntity> where TEntity : IEntity
+    public interface IGenericRepository<TEntity> : IUnitOfWork<DungeonCrawlerDbContext> where TEntity : IEntity 
     {
 
         #region CREATE
