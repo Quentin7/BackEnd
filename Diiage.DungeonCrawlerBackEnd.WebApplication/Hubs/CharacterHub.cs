@@ -8,5 +8,6 @@ namespace Diiage.DungeonCrawlerBackEnd.WebApplication.Hubs
 {
     public class CharacterHub : Hub
     {
+
     }
 }
