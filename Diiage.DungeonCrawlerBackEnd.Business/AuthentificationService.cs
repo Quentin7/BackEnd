@@ -1,15 +1,19 @@
 ﻿using Diiage.DungeonCrawlerBackEnd.Business.Contracts;
 using Diiage.DungeonCrawlerBackEnd.Entity;
 using Diiage.DungeonCrawlerBackEnd.Repository.Contract;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Text;
 
 namespace Diiage.DungeonCrawlerBackEnd.Business
 {
     public class AuthentificationService : IAuthentificationService
     {
-        private readonly IUserRepository _userRepository; 
+        private readonly IUserRepository _userRepository;
+
+        
         /// <summary>
         /// Allow register an user
         /// </summary>
@@ -26,12 +30,29 @@ namespace Diiage.DungeonCrawlerBackEnd.Business
             _userRepository.ResetPassword(user, newPassword);
         }
 
+        public void SignIn(User user)
+        {
+            //var jwtTokenHandler = new JwtSecurityTokenHandler();
+
+
+
+        }
+
         public void SignIn()
         {
             throw new NotImplementedException();
         }
 
         public void SignOut()
+        {
+            throw new NotImplementedException();
+        }
+        /// <summary>
+        /// Allow to verify if an email is already taken by an user
+        /// </summary>
+        /// <param name="eMail">email we want to check</param>
+        /// <returns>user with this email</returns>
+        public User VerificationEMail(string eMail)
         {
             throw new NotImplementedException();
         }
