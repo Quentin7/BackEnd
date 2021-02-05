@@ -1,8 +1,10 @@
 using Diiage.DungeonCrawlerBackEnd.Business;
 using Diiage.DungeonCrawlerBackEnd.Business.Contracts;
+using Diiage.DungeonCrawlerBackEnd.Entity;
 using Diiage.DungeonCrawlerBackEnd.Entity.Context;
 using Diiage.DungeonCrawlerBackEnd.Repository;
 using Diiage.DungeonCrawlerBackEnd.Repository.Contract;
+using Diiage.DungeonCrawlerBackEnd.WebApplication.Configuration;
 using Diiage.DungeonCrawlerBackEnd.WebApplication.Hubs;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -34,20 +36,31 @@ namespace Diiage.DungeonCrawlerBackEnd.WebApplication
             SeedDataLocal.Initialize();
             context.Dispose();
 
-            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-            .AddJwtBearer(options =>
-            {
-                options.TokenValidationParameters = new TokenValidationParameters
+            //services.Configure<JwtConfig>(Configuration.GetSection("JwtConfig"));
+
+            services.AddAuthentication(options => {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+            .AddJwtBearer(jwt => {
+                //var key = Encoding.ASCII.GetBytes(Configuration["JwtConfig:Secret"]);
+                var key = Encoding.ASCII.GetBytes("pqplyifhjmjrbczjdnfyblfxdujvnmcf");
+
+                jwt.SaveToken = true;
+                jwt.TokenValidationParameters = new TokenValidationParameters
                 {
-                    ValidateIssuer = true,
-                    ValidateAudience = true,
-                    ValidateLifetime = true,
-                    ValidateIssuerSigningKey = true,
-                    ValidIssuer = Configuration["Jwt:Issuer"],
-                    ValidAudience = Configuration["Jwt:Issuer"],
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))
+                    ValidateIssuerSigningKey = true, // this will validate the 3rd part of the jwt token using the secret that we added in the appsettings and verify we have generated the jwt token
+                    IssuerSigningKey = new SymmetricSecurityKey(key), // Add the secret key to our Jwt encryption
+                    ValidateIssuer = false,
+                    ValidateAudience = false,
+                    RequireExpirationTime = false,
+                    ValidateLifetime = true
                 };
             });
+            //services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfirmedAccount = true)
+            //    .AddEntityFrameworkStores<DungeonCrawlerDbContext>();
+
             services.AddMvc();
             services.AddCors();
             services.AddSignalR();
@@ -67,6 +80,7 @@ namespace Diiage.DungeonCrawlerBackEnd.WebApplication
             }
 
             app.UseRouting();
+            app.UseAuthentication();
 
             app.UseEndpoints(endpoints =>
             {
