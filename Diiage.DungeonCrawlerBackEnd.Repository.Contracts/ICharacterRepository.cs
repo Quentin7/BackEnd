@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Diiage.DungeonCrawlerBackEnd.Repository.Contract
 {
-    public interface DbCharacterRepository : IGenericRepository<Character>
+    public interface ICharacterRepository : IGenericRepository<Character>
     {
     }
 }

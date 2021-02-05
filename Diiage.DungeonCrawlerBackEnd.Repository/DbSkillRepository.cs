@@ -1,4 +1,5 @@
 ﻿using Diiage.DungeonCrawlerBackEnd.Entity;
+using Diiage.DungeonCrawlerBackEnd.Entity.Context;
 using Diiage.DungeonCrawlerBackEnd.Repository.Contract;
 using Microsoft.EntityFrameworkCore.Query;
 using System;
@@ -11,6 +12,8 @@ namespace Diiage.DungeonCrawlerBackEnd.Repository
 {
     class DbSkillRepository : ISkillRepository
     {
+        public DungeonCrawlerDbContext DbContext => throw new NotImplementedException();
+
         public void Add(Skill entity)
         {
             throw new NotImplementedException();
@@ -36,6 +39,11 @@ namespace Diiage.DungeonCrawlerBackEnd.Repository
             throw new NotImplementedException();
         }
 
+        public void Dispose()
+        {
+            throw new NotImplementedException();
+        }
+
         public IQueryable<Skill> FromSql(string sql, params object[] parameters)
         {
             throw new NotImplementedException();
@@ -57,6 +65,11 @@ namespace Diiage.DungeonCrawlerBackEnd.Repository
         }
 
         public IEnumerable<Skill> GetMuliple(Expression<Func<Skill, bool>> predicate = null, Func<IQueryable<Skill>, IOrderedQueryable<Skill>> orderBy = null, Func<IQueryable<Skill>, IIncludableQueryable<Skill, object>> include = null, bool disableTracking = true)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int Save()
         {
             throw new NotImplementedException();
         }

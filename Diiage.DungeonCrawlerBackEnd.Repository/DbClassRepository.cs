@@ -4,18 +4,20 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using Diiage.DungeonCrawlerBackEnd.Entity;
+using Diiage.DungeonCrawlerBackEnd.Entity.Context;
 using Diiage.DungeonCrawlerBackEnd.Repository.Contract;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query;
 
 namespace Diiage.DungeonCrawlerBackEnd.Repository
 {
-    class DbClassRepository : IClassRepository
+    public class DbClassRepository : IClassRepository
     {
+        public DungeonCrawlerDbContext DbContext {get; private set;}    // fait le partout
 
-        
         public void Add(Class @class)
-        {             
+        {
+            this.DbContext.Classes.Add(@class);
         }
 
         public void Add(IEnumerable<Class> entities)
@@ -34,6 +36,11 @@ namespace Diiage.DungeonCrawlerBackEnd.Repository
         }
 
         public void Delete(IEnumerable<Class> entities)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Dispose()
         {
             throw new NotImplementedException();
         }
@@ -67,6 +74,11 @@ namespace Diiage.DungeonCrawlerBackEnd.Repository
         public IEnumerable<Class> GetMuliple(Expression<Func<Class, bool>> predicate = null, Func<IQueryable<Class>, IOrderedQueryable<Class>> orderBy = null, Func<IQueryable<Class>, IIncludableQueryable<Class, object>> include = null, bool disableTracking = true)
         {
             throw new NotImplementedException();
+        }
+
+        public int Save()
+        {
+            return this.DbContext.SaveChanges();
         }
 
         public void Update(Class entity)

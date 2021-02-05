@@ -21,21 +21,6 @@ namespace Diiage.DungeonCrawlerBackEnd.Repository
             throw new NotImplementedException();
         }
 
-        public int ExecuteSqlCommand(string sql, params object[] parameters)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IQueryable<TEntity> FromSql<TEntity>(string sql, params object[] parameters) where TEntity : IEntity
-        {
-            throw new NotImplementedException();
-        }
-
-        public IGenericRepository<TEntity> GetRepository<TEntity>() where TEntity : IEntity
-        {
-            throw new NotImplementedException();
-        }
-
         public int Save()
         {
             throw new NotImplementedException();

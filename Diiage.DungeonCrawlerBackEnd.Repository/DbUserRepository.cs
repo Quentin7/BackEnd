@@ -12,16 +12,15 @@ namespace Diiage.DungeonCrawlerBackEnd.Repository
 {
     class DbUserRepository : IUserRepository
     {
+        public DungeonCrawlerDbContext DbContext { get; private set; }
+
         /// <summary>
         /// Allow to add a new user into the DB
         /// <param name="entity">user we want to add</param>
         public void Add(User entity)
         {
-            using (var context = new DungeonCrawlerDbContext())
-            {
-                context.Set<User>().Add(entity);
-                context.SaveChanges();
-            }
+            this.DbContext.Users.Add(entity);
+            this.Save();
         }
 
         /// <summary>
@@ -56,6 +55,11 @@ namespace Diiage.DungeonCrawlerBackEnd.Repository
         /// </summary>
         /// <param name="entities">list of users we want to delete</param>
         public void Delete(IEnumerable<User> entities)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Dispose()
         {
             throw new NotImplementedException();
         }
@@ -97,6 +101,11 @@ namespace Diiage.DungeonCrawlerBackEnd.Repository
         public void ResetPassword(User user)
         {
             throw new NotImplementedException();
+        }
+
+        public int Save()
+        {
+            return this.DbContext.SaveChanges();
         }
 
         /// <summary>
