@@ -9,6 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Diiage.DungeonCrawlerBackEnd.Entity.Context\Diiage.DungeonCrawlerBackEnd.Entity.Context.csproj" />
     <ProjectReference Include="..\Diiage.DungeonCrawlerBackEnd.Entity\Diiage.DungeonCrawlerBackEnd.Entity.csproj" />
   </ItemGroup>
 

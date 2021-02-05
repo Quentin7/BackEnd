@@ -1,4 +1,5 @@
 ﻿using Diiage.DungeonCrawlerBackEnd.Entity;
+using Diiage.DungeonCrawlerBackEnd.Entity.Context;
 using Diiage.DungeonCrawlerBackEnd.Repository.Contract;
 using Microsoft.EntityFrameworkCore.Query;
 using System;
@@ -9,8 +10,10 @@ using System.Text;
 
 namespace Diiage.DungeonCrawlerBackEnd.Repository
 {
-    class DbCharacterRepository : IGenericRepository<Character>
+    public class DbCharacterRepository : ICharacterRepository
     {
+        public DungeonCrawlerDbContext DbContext => throw new NotImplementedException();
+
         public void Add(Character entity)
         {
             throw new NotImplementedException();
@@ -36,6 +39,11 @@ namespace Diiage.DungeonCrawlerBackEnd.Repository
             throw new NotImplementedException();
         }
 
+        public void Dispose()
+        {
+            throw new NotImplementedException();
+        }
+
         public IQueryable<Character> FromSql(string sql, params object[] parameters)
         {
             throw new NotImplementedException();
@@ -57,6 +65,11 @@ namespace Diiage.DungeonCrawlerBackEnd.Repository
         }
 
         public IEnumerable<Character> GetMuliple(Expression<Func<Character, bool>> predicate = null, Func<IQueryable<Character>, IOrderedQueryable<Character>> orderBy = null, Func<IQueryable<Character>, IIncludableQueryable<Character, object>> include = null, bool disableTracking = true)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int Save()
         {
             throw new NotImplementedException();
         }
