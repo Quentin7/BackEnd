@@ -1,13 +1,15 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Diiage.DungeonCrawlerBackEnd.Entity
 {
     public class User : IEntity
     {
-        public int UserId { get; set; }
         public string UserFirstname { get; set; }
         public string UserLastname { get; set; }
+        [Required]
         public string UserEMail { get; set; }
+        [Required]
         public string UserPasswordHash { get; set; }
         public string UserPasswordSalt { get; set; }
         public IEnumerable<Character> UserCharacters { get; set; }

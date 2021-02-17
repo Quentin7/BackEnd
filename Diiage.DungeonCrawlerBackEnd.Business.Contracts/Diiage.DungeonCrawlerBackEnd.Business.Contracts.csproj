@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Diiage.DungeonCrawlerBackEnd.Entity\Diiage.DungeonCrawlerBackEnd.Entity.csproj" />
+    <ProjectReference Include="..\Diiage.DungeonCrawlerBackEnd.Repository.Contracts\Diiage.DungeonCrawlerBackEnd.Repository.Contracts.csproj" />
   </ItemGroup>
 
 </Project>
