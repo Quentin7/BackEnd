@@ -4,4 +4,16 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Diiage.DungeonCrawlerBackEnd.Business.Contracts\Diiage.DungeonCrawlerBackEnd.Business.Contracts.csproj" />
+    <ProjectReference Include="..\Diiage.DungeonCrawlerBackEnd.Business\Diiage.DungeonCrawlerBackEnd.Business.csproj" />
+    <ProjectReference Include="..\Diiage.DungeonCrawlerBackEnd.Entity.Context\Diiage.DungeonCrawlerBackEnd.Entity.Context.csproj" />
+    <ProjectReference Include="..\Diiage.DungeonCrawlerBackEnd.Repository.Contracts\Diiage.DungeonCrawlerBackEnd.Repository.Contracts.csproj" />
+    <ProjectReference Include="..\Diiage.DungeonCrawlerBackEnd.Repository\Diiage.DungeonCrawlerBackEnd.Repository.csproj" />
+  </ItemGroup>
+
 </Project>
