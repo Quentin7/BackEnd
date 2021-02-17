@@ -7,6 +7,7 @@ namespace Diiage.DungeonCrawlerBackEnd.WebApplication.Controllers
     public class AuthentificationController : Controller
     {
         private IAuthentificationService _authentificationService;
+        private IUserService _userService;
 
         /// <summary>
         /// Allow to register a new user
@@ -22,9 +23,16 @@ namespace Diiage.DungeonCrawlerBackEnd.WebApplication.Controllers
         /// Allow to connect an user
         /// </summary>
         [HttpPost]
-        public void SignIn()
+        public void SignIn(User user)
         {
-            _authentificationService.SignIn();
+            if (ModelState.IsValid)
+            {
+                var userNameDb = _userService.FindByMail(user.UserEMail);
+                
+                //lecriptageilfaudrat le faire mais plus tard
+
+            }
+            _authentificationService.SignIn(user);
         }
         
         /// <summary>
