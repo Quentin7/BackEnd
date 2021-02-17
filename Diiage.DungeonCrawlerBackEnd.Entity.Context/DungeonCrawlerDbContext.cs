@@ -14,10 +14,6 @@ namespace Diiage.DungeonCrawlerBackEnd.Entity.Context
         public DungeonCrawlerDbContext() 
         {
         }
-        public DungeonCrawlerDbContext(DbContextOptions<DungeonCrawlerDbContext> options)
-        : base(options)
-        {
-        }
         public DungeonCrawlerDbContext( IConfiguration configuration)
         {
             ConfigurationDb = configuration;
