@@ -18,8 +18,8 @@ namespace Diiage.DungeonCrawlerBackEnd.WebApplication.Controllers
 {
     public class AuthentificationController : Controller
     {
-        readonly private IAuthentificationService _authentificationService;
-        readonly private JwtConfig _jwtConfig;
+        private IAuthentificationService _authentificationService;
+        private IUserService _userService;
 
         public AuthentificationController( IAuthentificationService authentificationService, JwtConfig jwtConfig)
         {
@@ -81,9 +81,16 @@ namespace Diiage.DungeonCrawlerBackEnd.WebApplication.Controllers
         /// Allow to connect an user
         /// </summary>
         [HttpPost]
-        public void SignIn()
+        public void SignIn(User user)
         {
-            _authentificationService.SignIn();
+            if (ModelState.IsValid)
+            {
+                var userNameDb = _userService.FindByMail(user.UserEMail);
+                
+                //lecriptageilfaudrat le faire mais plus tard
+
+            }
+            _authentificationService.SignIn(user);
         }
         
         /// <summary>

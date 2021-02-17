@@ -11,9 +11,8 @@ namespace Diiage.DungeonCrawlerBackEnd.Business
 {
     public class AuthentificationService : IAuthentificationService
     {
-        private readonly IUserRepository _userRepository;
+        private readonly IUserRepository _userRepository; 
 
-        
         /// <summary>
         /// Allow register an user
         /// </summary>
@@ -22,6 +21,7 @@ namespace Diiage.DungeonCrawlerBackEnd.Business
         {
             _userRepository.Add(user);
         }
+
         /// <summary>
         /// Allow to reset the password of an user
         /// </summary>
@@ -30,22 +30,14 @@ namespace Diiage.DungeonCrawlerBackEnd.Business
             _userRepository.ResetPassword(user, newPassword);
         }
 
-        public void SignIn(User user)
-        {
-            //var jwtTokenHandler = new JwtSecurityTokenHandler();
-
-
-
-        }
-
         public void SignIn()
         {
-            throw new NotImplementedException();
+            _userRepository.SignIn(user);
         }
 
         public void SignOut()
         {
-            throw new NotImplementedException();
+            _userRepository.SignOut();
         }
         /// <summary>
         /// Allow to verify if an email is already taken by an user
