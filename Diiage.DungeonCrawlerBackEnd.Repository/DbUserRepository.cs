@@ -64,6 +64,33 @@ namespace Diiage.DungeonCrawlerBackEnd.Repository
             throw new NotImplementedException();
         }
 
+        public User FindByMail(string email)
+        {
+            try 
+            { 
+                return this.DbContext.Users.FirstOrDefault(u => u.UserEMail == email); 
+            }
+            catch 
+            { 
+                throw new Exception(); 
+            }
+            
+        }
+
+        public bool PasswordValidation(string password) 
+        {
+            try
+            {
+                //if (DbContext.)
+            }
+            catch
+            {
+
+              
+            }
+        }
+
+        
         /// <summary>
         /// Allow to get all users
         /// </summary>
@@ -112,6 +139,11 @@ namespace Diiage.DungeonCrawlerBackEnd.Repository
         /// Allow to connect an user
         /// </summary>
         public void SignIn()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void SignIn(User user)
         {
             throw new NotImplementedException();
         }
